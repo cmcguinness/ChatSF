@@ -46,9 +46,9 @@ class SalesforceFunctions:
                                          'LastName', 'Id', 'MobilePhone', 'Name', 'Phone', 'Salutation', 'Title',
                                          'Email']
 
-        self.table2columns['Opportunity'] = ['AccountId', 'Amount', 'CloseDate', 'ContactId', ' Description',
+        self.table2columns['Opportunity'] = ['AccountId', 'Amount', 'CloseDate', 'ContactId', 'Description',
                                              'ExpectedRevenue', 'ForecastCategoryName', 'Id', 'IsClosed', 'IsDeleted',
-                                             ' IsWon', 'Name', 'NextStep', ' OwnerId', 'Owner.Name', 'Probability',
+                                             'IsWon', 'Name', 'NextStep', 'OwnerId', 'Owner.Name', 'Probability',
                                              'StageName',
                                              'TotalOpportunityQuantity', 'Type']
 

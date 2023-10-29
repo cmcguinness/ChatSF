@@ -205,10 +205,10 @@ if __name__ == '__main__':
     tables = {
         'Account': ['Id', 'a1', 'a2', 'a3', 'OwnerId'],
         'Contact': ['Id', 'c1', 'c2', 'c3', 'OwnerId', 'AccountId'],
-        'Opportunity': ['AccountId', 'Amount', 'CloseDate', 'ContactId', ' Description',
+        'Opportunity': ['AccountId', 'Amount', 'CloseDate', 'ContactId', 'Description',
                         'ExpectedRevenue', 'ForecastCategoryName', 'Id', 'IsClosed', 'IsDeleted',
-                        ' IsWon', 'Name', 'NextStep', ' OwnerId', 'Owner.Name', 'Probability', 'StageName',
-                        ' TotalOpportunityQuantity', 'Type']
+                        'IsWon', 'Name', 'NextStep', 'OwnerId', 'Owner.Name', 'Probability', 'StageName',
+                        'TotalOpportunityQuantity', 'Type']
     }
 
     tests_with_tables = [
