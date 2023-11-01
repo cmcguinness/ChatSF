@@ -129,9 +129,10 @@ def sql2soql(sql: str, table2columns: dict = {}, add_id=True, hard_limit: int = 
             fields = 'FIELDS(ALL)'
             list_fields.append('Id')  # So we won't try to add Id and get an error
 
-    #   SELECT count(*) -> Select count()
-    if fields.lower() == 'count(*)':
-        fields = 'count()'
+    #   SELECT count(*) -> Select count(Id)
+    if fields.lower() == 'count(*)' or fields.lower() == 'count()':
+        fields = 'count(Id)'
+        list_fields = [fields]
 
     #   Make sure 'Id' is in the list of fields,
     #   If not an aggregate and we were told to do it
@@ -212,6 +213,7 @@ if __name__ == '__main__':
     }
 
     tests_with_tables = [
+        "SELECT Count(*) FROM Opportunity",
         "SELECT a1, a2 FROM Account WHERE Name='Fred' GROUP BY lastname ORDER BY firstname",
         "SELECT Max(a1) cmax FROM Account WHERE Name='Fred' Group BY firstname order by cmax DESC",
         "SELECT * FROM Contact WHERE FirstName='Fred' and LastName='Smith' ORDER BY email DESC limit 20",
